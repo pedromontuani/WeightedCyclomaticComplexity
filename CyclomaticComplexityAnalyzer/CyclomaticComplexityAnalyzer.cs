@@ -20,10 +20,16 @@ public static class CyclomaticComplexityAnalyzer
             var root = await syntaxTree.GetRootAsync(_);
 
             var methodDeclarations = root.DescendantNodes().OfType<MethodDeclarationSyntax>();
+            
+            var complexity = new FileComplexity(document.FilePath ?? "", 0);
 
             foreach (var method in methodDeclarations)
             {
-                var complexity = new FileComplexity(document.FilePath ?? "", CalculateMethodCyclomaticComplexity(method));
+                complexity.complexity += CalculateMethodCyclomaticComplexity(method);
+            }
+            
+            if (complexity.complexity > 0)
+            {
                 filesComplexity.Add(complexity);
             }
         });

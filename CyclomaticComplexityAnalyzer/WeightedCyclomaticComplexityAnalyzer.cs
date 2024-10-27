@@ -22,9 +22,15 @@ public static class WeightedCyclomaticComplexityAnalyzer
 
             var methodDeclarations = root.DescendantNodes().OfType<MethodDeclarationSyntax>();
 
+            var complexity = new FileComplexity(document.FilePath ?? "", 0);
+
             foreach (var method in methodDeclarations)
             {
-                var complexity = new FileComplexity(document.FilePath ?? "", CalculateMethodWeightedComplexity(method));
+                complexity.complexity += CalculateMethodWeightedComplexity(method);
+            }
+
+            if (complexity.complexity > 0)
+            {
                 filesComplexity.Add(complexity);
             }
         });
@@ -37,32 +43,18 @@ public static class WeightedCyclomaticComplexityAnalyzer
     private static int CalculateMethodWeightedComplexity(MethodDeclarationSyntax method)
     {
         int complexity = 1;
-        int nestedLoopCount = 0;
 
         var descendants = method.DescendantNodes();
 
         foreach (var node in descendants)
         {
-            var nestingLevel = node.Ancestors().Count(n => IsDecisionNode(n) || IsLoopNode(n));
+            var nestingLevel = node.Ancestors().Count(n => IsLoopNode(n) || IsDecisionNode(n));
             
-            if (IsDecisionNode(node))
+            if (IsDecisionNode(node) || IsLoopNode(node))
             {
                 complexity += 1 + nestingLevel;
             }
             
-            if (IsLoopNode(node))
-            {
-                if (node.Ancestors().Where(IsLoopNode).Any())
-                {
-                    nestedLoopCount++;
-                }
-                else
-                {
-                    nestedLoopCount = 0;
-                }
-                
-                complexity += 1 * Math.Max(nestedLoopCount, 1) + nestingLevel;
-            }
         }
 
         return complexity;

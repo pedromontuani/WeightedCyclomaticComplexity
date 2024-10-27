@@ -10,24 +10,24 @@ class Program
 
         if (true)
         {
-            
+
         }
 
         if (true)
         {
-            
+
         }
-        
+
         if (true)
         {
-            
+
         }
-        
-        for(var i=0; i<10; i++)
+
+        for (var i = 0; i < 10; i++)
         {
             if (true)
             {
-                
+
             }
         }
         
@@ -38,4 +38,11 @@ class Program
             }
         }
     }
+
+
+    void Foo(int i)
+    {
+        Console.WriteLine(i);
+    }
+    
 }
