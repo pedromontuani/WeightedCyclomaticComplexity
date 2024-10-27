@@ -1,4 +1,5 @@
 using CyclomaticComplexityAnalyzer.dto;
+using CyclomaticComplexityAnalyzer.utils;
 using JinianNet.JNTemplate;
 
 namespace CyclomaticComplexityAnalyzer;
@@ -22,7 +23,7 @@ public class Report
         {
             if (_reports.TryGetValue(fileComplexity.filePath, out var report))
             {
-                report.modifiedCyclomaticComplexity = fileComplexity.complexity;
+                report.weightedCyclomaticComplexity = fileComplexity.complexity;
             }
             else
             {
@@ -34,7 +35,13 @@ public class Report
     public void GenerateReport()
     {
         var reports = _reports.Values.ToList();
+        
         _indexTemplate.Set("reports", reports);
+        _indexTemplate.Set("ratingCssClass", "");
+        _indexTemplate.Set("result", "");
+        _indexTemplate.Set("ratingCssClass", "high");
+        
+        FilesManager.SaveFile(OutDir + "/index.html", _indexTemplate.Render());
     }
 
 }

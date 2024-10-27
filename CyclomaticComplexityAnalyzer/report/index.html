@@ -25,91 +25,36 @@
         </p>
         
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <div class="pad1">
 <table class="coverage-summary">
 <thead>
 <tr>
-   <th data-col="file" data-fmt="html" data-html="true" class="file">File</th>
-   <th data-col="pic" data-type="number" data-fmt="html" data-html="true" class="pic"></th>
-   <th data-col="errors" data-type="number" data-fmt="pct" class="pct">Erros</th>
-   <th data-col="warnings" data-type="number" data-fmt="pct" class="pct">Alertas</th>
-   <th data-col="total" data-type="number" data-fmt="pct" class="pct">Análises realizadas</th>
-    <th data-col="total" data-type="number" data-fmt="pct" class="pct">Classificação</th>
+   <th data-col="file" data-fmt="html" data-html="true" class="file">Arquivo</th>
+   <th data-col="errors" data-type="number" data-fmt="pct" class="pct">Complexidade ciclomática</th>
+   <th data-col="warnings" data-type="number" data-fmt="pct" class="pct">Complexidade ciclomática ponderada</th>
 </tr>
 </thead>
 <tbody>
 
 
 <tr>
-	<td class="file medium" data-value="constants"><a href="full/img-tags_0ee314a5-b6dc-41de-823b-a78534ab9c1f.html">src-bad/img-tags.html</a></td>
-	<td data-value="44" class="pic medium">
-	<div class="chart"><div class="cover-fill cover-full" style="width: calc(100% - 44%)"></div><div class="cover-empty" style="width: 0%"></div></div>
-	</td>
-	<td data-value="36" class="pct medium">10</td>
-	<td data-value="39" class="pct medium">11</td>
-    <td data-value="39" class="pct medium">28</td>
-    <td data-value="39" class="pct medium">Regular</td>
-</tr>
-
-<tr>
-	<td class="file low" data-value="constants"><a href="full/somepage_88d2d927-6812-4d97-b544-65e20ba57ef1.html">src-bad/somepage.html</a></td>
-	<td data-value="0" class="pic low">
-	<div class="chart"><div class="cover-fill cover-full" style="width: calc(100% - 0%)"></div><div class="cover-empty" style="width: 0%"></div></div>
-	</td>
-	<td data-value="100" class="pct low">6</td>
-	<td data-value="0" class="pct low">0</td>
-    <td data-value="0" class="pct low">6</td>
-    <td data-value="0" class="pct low">Ruim</td>
-</tr>
-
-<tr>
-	<td class="file low" data-value="constants"><a href="full/wrong-inputs_7570edd4-d7ca-4b68-aead-62bc28484841.html">src-bad/wrong-inputs.html</a></td>
-	<td data-value="6" class="pic low">
-	<div class="chart"><div class="cover-fill cover-full" style="width: calc(100% - 6%)"></div><div class="cover-empty" style="width: 0%"></div></div>
-	</td>
-	<td data-value="88" class="pct low">7</td>
-	<td data-value="12" class="pct low">1</td>
-    <td data-value="12" class="pct low">8</td>
-    <td data-value="12" class="pct low">Ruim</td>
+	<td class="file high" data-value="constants">Program.cs</td>
+	<td data-value="8" class="pct high">8</td>
+	<td data-value="10" class="pct high">10</td>
 </tr>
 
 
 </tbody>
 </table>
         <div style="padding-left: 20px; padding-top: 20px">
-            <h2>Classificação geral: Regular</h2>
+            <h2>Complexidade ciclomática geral: </h2>
+            <h2>Complexidade ciclomática ponderada geral: </h2>
         </div>
         
         <div style="padding-left: 20px; padding-top: 20px">
             <h2>Explicação da Lógica de Penalização e Métrica:</h2>
-            <p>
-                A lógica de penalização foi inspirada nas diretrizes WCAG (Web Content Accessibility
-                Guidelines).
-                </p>
-            <p>
-                Cada verificação é associada a um peso específico que reflete sua importância para
-                acessibilidade, sendo <strong>Erros = 1</strong> e <strong>Alertas = 0,5</strong>.
-            </p>
-            <p>
-                A pontuação final é reduzida proporcionalmente ao número de penalizações em relação ao total
-                de verificações realizadas, para refletir melhor a gravidade dos problemas de acessibilidade.
-            </p>
-            <h3>
-                A classificação é baseada na pontuação total, sendo: 
-            </h3>
-            <p>
-                - 0 a 25: Ruim
-            </p>
-            <p>
-                - 26 a 50: Regular
-            </p>
-           <p>
-               - 51 a 75: Bom
-           </p>
-           <p>
-               - 76 a 100: Ótimo
-           </p>
+           
         </div>
 </div>
                 <div class='push'></div><!-- for sticky footer -->

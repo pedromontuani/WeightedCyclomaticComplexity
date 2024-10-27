@@ -29,7 +29,11 @@ class Program
         Console.WriteLine($"Total Cyclomatic Complexity: {totalComplexity}");
         totalComplexity = wcc.Sum(c => c.complexity);
         Console.WriteLine($"Total Weighted Cyclomatic Complexity: {totalComplexity}");
+
+        var report = new Report(cc, wcc);
         
+        report.GenerateReport();
+
         // int totalComplexity = complexity.Sum();
         // Console.WriteLine($"Total Cyclomatic Complexity: {totalComplexity}");
     }

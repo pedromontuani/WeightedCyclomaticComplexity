@@ -8,7 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="229e17c0-df3a-46a8-9ca6-fd6eef26b03a" name="Changes" comment="" />
+    <list default="true" id="229e17c0-df3a-46a8-9ca6-fd6eef26b03a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/utils/FilesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CyclomaticComplexityAnalyzer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CyclomaticComplexityAnalyzer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/Report.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/Report.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/dto/FileReport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/dto/FileReport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/report/full/img-tags_0ee314a5-b6dc-41de-823b-a78534ab9c1f.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/report/full/somepage_88d2d927-6812-4d97-b544-65e20ba57ef1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/report/full/wrong-inputs_7570edd4-d7ca-4b68-aead-62bc28484841.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/resources/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,34 +38,34 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81848964afd4a394455a4233de21feb73aa73a5fe5c8581eaafe25c448cb77/MSBuildProjectLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3b2c3c2ec68223a42471d1e5dc74b62edb5ebdb345af831615c2026dd23/Workspace.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2nyVMEsAXU52gbEfX78M14Byc1K" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.CyclomaticComplexityAnalyzer.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.general",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.CyclomaticComplexityAnalyzer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Project.CyclomaticComplexityAnalyzer">
     <configuration name="CyclomaticComplexityAnalyzer" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/bin/Debug/net8.0/CyclomaticComplexityAnalyzer" />
-      <option name="PROGRAM_PARAMETERS" value="CyclomaticTest/CyclomaticTest.csproj" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="../CyclomaticTest/CyclomaticTest.csproj" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CyclomaticComplexityAnalyzer" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <envs>
         <env name="MSBUILD_PATH" value="/usr/local/share/dotnet/sdk/7.0.317/" />
@@ -104,6 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729945252375</updated>
       <workItem from="1729945253413" duration="14458000" />
+      <workItem from="1730045026180" duration="2506000" />
     </task>
     <servers />
   </component>

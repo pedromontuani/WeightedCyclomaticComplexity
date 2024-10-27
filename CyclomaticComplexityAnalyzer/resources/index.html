@@ -30,64 +30,31 @@
 <table class="coverage-summary">
 <thead>
 <tr>
-   <th data-col="file" data-fmt="html" data-html="true" class="file">File</th>
-   <th data-col="pic" data-type="number" data-fmt="html" data-html="true" class="pic"></th>
-   <th data-col="errors" data-type="number" data-fmt="pct" class="pct">Erros</th>
-   <th data-col="warnings" data-type="number" data-fmt="pct" class="pct">Alertas</th>
-   <th data-col="total" data-type="number" data-fmt="pct" class="pct">Análises realizadas</th>
-    <th data-col="total" data-type="number" data-fmt="pct" class="pct">Classificação</th>
+   <th data-col="file" data-fmt="html" data-html="true" class="file">Arquivo</th>
+   <th data-col="errors" data-type="number" data-fmt="pct" class="pct">Complexidade ciclomática</th>
+   <th data-col="warnings" data-type="number" data-fmt="pct" class="pct">Complexidade ciclomática ponderada</th>
 </tr>
 </thead>
 <tbody>
 
 ${foreach(report in reports)}
 <tr>
-	<td class="file ${report.ratingCssClass}" data-value="constants"><a href="${report.fullReportPath}">${report.filePath}</a></td>
-	<td data-value="${report.percentage}" class="pic ${report.ratingCssClass}">
-	<div class="chart"><div class="cover-fill cover-full" style="width: calc(100% - ${report.percentage}%)"></div><div class="cover-empty" style="width: 0%"></div></div>
-	</td>
-	<td data-value="${report.errorsPercentage}" class="pct ${report.ratingCssClass}">${report.errorsCount}</td>
-	<td data-value="${report.warningsPercentage}" class="pct ${report.ratingCssClass}">${report.warningsCount}</td>
-    <td data-value="${report.warningsPercentage}" class="pct ${report.ratingCssClass}">${report.totalAnalyzesCount}</td>
-    <td data-value="${report.warningsPercentage}" class="pct ${report.ratingCssClass}">${report.formattedClassification}</td>
+	<td class="file ${report.ratingCssClass}" data-value="constants">${report.filePath}</td>
+	<td data-value="${report.cyclomaticComplexity}" class="pct ${report.ratingCssClass}">${report.cyclomaticComplexity}</td>
+	<td data-value="${report.weightedCyclomaticComplexity}" class="pct ${report.ratingCssClass}">${report.weightedCyclomaticComplexity}</td>
 </tr>
 ${end}
 
 </tbody>
 </table>
         <div style="padding-left: 20px; padding-top: 20px">
-            <h2>Classificação geral: ${result}</h2>
+            <h2>Complexidade ciclomática geral: ${result}</h2>
+            <h2>Complexidade ciclomática ponderada geral: ${result}</h2>
         </div>
         
         <div style="padding-left: 20px; padding-top: 20px">
             <h2>Explicação da Lógica de Penalização e Métrica:</h2>
-            <p>
-                A lógica de penalização foi inspirada nas diretrizes WCAG (Web Content Accessibility
-                Guidelines).
-                </p>
-            <p>
-                Cada verificação é associada a um peso específico que reflete sua importância para
-                acessibilidade, sendo <strong>Erros = 1</strong> e <strong>Alertas = 0,5</strong>.
-            </p>
-            <p>
-                A pontuação final é reduzida proporcionalmente ao número de penalizações em relação ao total
-                de verificações realizadas, para refletir melhor a gravidade dos problemas de acessibilidade.
-            </p>
-            <h3>
-                A classificação é baseada na pontuação total, sendo: 
-            </h3>
-            <p>
-                - 0 a 25: Ruim
-            </p>
-            <p>
-                - 26 a 50: Regular
-            </p>
-           <p>
-               - 51 a 75: Bom
-           </p>
-           <p>
-               - 76 a 100: Ótimo
-           </p>
+           
         </div>
 </div>
                 <div class='push'></div><!-- for sticky footer -->
