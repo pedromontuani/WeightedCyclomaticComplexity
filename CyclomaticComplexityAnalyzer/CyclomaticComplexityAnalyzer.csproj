@@ -7,4 +7,18 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="JinianNet.JNTemplate" Version="2.4.2" />
+      <PackageReference Include="Microsoft.Build.Locator" Version="1.7.8" />
+      <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.11.0" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.11.0" />
+      <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.11.0" />
+      <PackageReference Include="Nuke.MSBuildLocator" Version="6.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="report\.DS_Store" />
+    </ItemGroup>
+
 </Project>

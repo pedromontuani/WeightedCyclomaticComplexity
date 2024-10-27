@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.MSBuild;
 
 namespace CyclomaticComplexityAnalyzer;
 
-public class ModifiedCyclomaticComplexityAnalyzer
+public static class WeightedCyclomaticComplexityAnalyzer
 {
     private static readonly Type[] DecisionNodesTypes = new[] {typeof(IfStatementSyntax), typeof(SwitchStatementSyntax), typeof(ConditionalExpressionSyntax), typeof(CatchClauseSyntax)};
     private static readonly Type[] LoopNodesTypes = new[] {typeof(ForStatementSyntax), typeof(WhileStatementSyntax), typeof(DoStatementSyntax), typeof(ForEachStatementSyntax)};
@@ -33,11 +33,12 @@ public class ModifiedCyclomaticComplexityAnalyzer
         return filesComplexity.ToArray();
     }
 
+    
     private static int CalculateMethodWeightedComplexity(MethodDeclarationSyntax method)
     {
         int complexity = 0;
         int nestingLevel = 0;
-        int weight = 0;
+        int nestedLoopCount = 0;
 
         var descendants = method.DescendantNodes();
 
@@ -50,7 +51,16 @@ public class ModifiedCyclomaticComplexityAnalyzer
             
             if (IsLoopNode(node))
             {
-                complexity += ++weight + nestingLevel++;
+                if (node.Ancestors().Where(IsLoopNode).Any())
+                {
+                    nestedLoopCount++;
+                }
+                else
+                {
+                    nestedLoopCount = 0;
+                }
+                
+                complexity += Math.Max(nestedLoopCount, 1) + nestingLevel++;
             }
         }
 
