@@ -10,12 +10,14 @@ class Program
 
         if (true)
         {
-            if (true)
-            {
             
-            }
         }
 
+        if (true)
+        {
+            
+        }
+        
         if (true)
         {
             

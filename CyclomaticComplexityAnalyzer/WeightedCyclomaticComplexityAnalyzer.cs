@@ -36,17 +36,18 @@ public static class WeightedCyclomaticComplexityAnalyzer
     
     private static int CalculateMethodWeightedComplexity(MethodDeclarationSyntax method)
     {
-        int complexity = 0;
-        int nestingLevel = 0;
+        int complexity = 1;
         int nestedLoopCount = 0;
 
         var descendants = method.DescendantNodes();
 
         foreach (var node in descendants)
         {
+            var nestingLevel = node.Ancestors().Count(n => IsDecisionNode(n) || IsLoopNode(n));
+            
             if (IsDecisionNode(node))
             {
-                complexity += 1 + nestingLevel++;
+                complexity += 1 + nestingLevel;
             }
             
             if (IsLoopNode(node))
@@ -60,7 +61,7 @@ public static class WeightedCyclomaticComplexityAnalyzer
                     nestedLoopCount = 0;
                 }
                 
-                complexity += Math.Max(nestedLoopCount, 1) + nestingLevel++;
+                complexity += 1 * Math.Max(nestedLoopCount, 1) + nestingLevel;
             }
         }
 
