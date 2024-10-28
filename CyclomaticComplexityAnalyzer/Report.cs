@@ -10,6 +10,9 @@ public class Report
     private const string OutDir = "report";
     private readonly ITemplate _indexTemplate = Engine.LoadTemplate(IndexTemplatePath);
     
+    private int totalCyclomaticComplexity;
+    private int totalWeightedCyclomaticComplexity;
+    
     private readonly Dictionary<string, FileReport> _reports = new ();
     
     public Report(FileComplexity[] cyclomatic, FileComplexity[] modifiedCyclomatic)
@@ -30,6 +33,12 @@ public class Report
                 _reports[fileComplexity.filePath] = new FileReport(fileComplexity.filePath, 0, fileComplexity.complexity);
             }
         }
+        
+        foreach (var report in _reports.Values)
+        {
+            totalCyclomaticComplexity += report.cyclomaticComplexity;
+            totalWeightedCyclomaticComplexity += report.weightedCyclomaticComplexity;
+        }
     }
 
     public void GenerateReport()
@@ -40,6 +49,8 @@ public class Report
         _indexTemplate.Set("ratingCssClass", "");
         _indexTemplate.Set("result", "");
         _indexTemplate.Set("ratingCssClass", "high");
+        _indexTemplate.Set("totalCyclomaticComplexity", totalCyclomaticComplexity);
+        _indexTemplate.Set("totalWeightedCyclomaticComplexity", totalWeightedCyclomaticComplexity);
         
         FilesManager.SaveFile(OutDir + "/index.html", _indexTemplate.Render());
     }
