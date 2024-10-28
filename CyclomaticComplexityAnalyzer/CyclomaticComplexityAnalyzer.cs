@@ -6,9 +6,8 @@ using Microsoft.CodeAnalysis.MSBuild;
 
 namespace CyclomaticComplexityAnalyzer;
 
-public static class CyclomaticComplexityAnalyzer
+public class CyclomaticComplexityAnalyzer : Complexity
 {
-    private static readonly Type[] BranchingNodesTypes = new[] {typeof(IfStatementSyntax), typeof(WhileStatementSyntax), typeof(ForStatementSyntax), typeof(SwitchStatementSyntax), typeof(ConditionalExpressionSyntax), typeof(CatchClauseSyntax)};
 
     public static async Task<FileComplexity[]> CalculateCyclomaticComplexity(Project msProject)
     {
@@ -18,9 +17,8 @@ public static class CyclomaticComplexityAnalyzer
         {
             var syntaxTree = await document.GetSyntaxTreeAsync(_);
             var root = await syntaxTree.GetRootAsync(_);
-
-            var methodDeclarations = root.DescendantNodes().OfType<MethodDeclarationSyntax>();
-            
+            var methodDeclarations = root.DescendantNodes()
+                .OfType<MethodDeclarationSyntax>();
             var complexity = new FileComplexity(document.FilePath ?? "", 0);
 
             foreach (var method in methodDeclarations)
@@ -39,11 +37,12 @@ public static class CyclomaticComplexityAnalyzer
 
     private static int CalculateMethodCyclomaticComplexity(MethodDeclarationSyntax method)
     {
-        var complexity = 1; // Start with 1 for the method itself.
-
+        var complexity = 1;
         var descendants = method.DescendantNodes();
         
-        var branchingNodes = descendants.Where(node => BranchingNodesTypes.Contains(node.GetType())).ToList();
+        var branchingNodes = descendants
+            .Where(IsBranchingNode).ToList();
+        
         complexity += branchingNodes.Count;
 
         return complexity;

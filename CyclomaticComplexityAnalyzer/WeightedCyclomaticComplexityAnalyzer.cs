@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.MSBuild;
 
 namespace CyclomaticComplexityAnalyzer;
 
-public static class WeightedCyclomaticComplexityAnalyzer
+public class WeightedCyclomaticComplexityAnalyzer : Complexity
 {
     private static readonly Type[] DecisionNodesTypes = new[] {typeof(IfStatementSyntax), typeof(SwitchStatementSyntax), typeof(ConditionalExpressionSyntax), typeof(CatchClauseSyntax)};
     private static readonly Type[] LoopNodesTypes = new[] {typeof(ForStatementSyntax), typeof(WhileStatementSyntax), typeof(DoStatementSyntax), typeof(ForEachStatementSyntax)};
@@ -43,14 +43,14 @@ public static class WeightedCyclomaticComplexityAnalyzer
     private static int CalculateMethodWeightedComplexity(MethodDeclarationSyntax method)
     {
         int complexity = 1;
-
         var descendants = method.DescendantNodes();
 
         foreach (var node in descendants)
         {
-            var nestingLevel = node.Ancestors().Count(n => IsLoopNode(n) || IsDecisionNode(n));
+            var nestingLevel = node.Ancestors()
+                .Count(IsBranchingNode);
             
-            if (IsDecisionNode(node) || IsLoopNode(node))
+            if (IsBranchingNode(node))
             {
                 complexity += 1 + nestingLevel;
             }
@@ -58,15 +58,5 @@ public static class WeightedCyclomaticComplexityAnalyzer
         }
 
         return complexity;
-    }
-
-    private static bool IsDecisionNode(SyntaxNode node)
-    {
-        return DecisionNodesTypes.Contains(node.GetType());
-    }
-
-    private static bool IsLoopNode(SyntaxNode node)
-    {
-        return LoopNodesTypes.Contains(node.GetType());
     }
 }

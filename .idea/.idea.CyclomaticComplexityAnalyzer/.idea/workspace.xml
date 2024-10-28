@@ -9,11 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="229e17c0-df3a-46a8-9ca6-fd6eef26b03a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/Complexity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CyclomaticComplexityAnalyzer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CyclomaticComplexityAnalyzer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/CyclomaticComplexityAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/CyclomaticComplexityAnalyzer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/WeightedCyclomaticComplexityAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/WeightedCyclomaticComplexityAnalyzer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticComplexityAnalyzer/report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CyclomaticTest/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CyclomaticTest/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729945252375</updated>
       <workItem from="1729945253413" duration="14458000" />
-      <workItem from="1730045026180" duration="5014000" />
+      <workItem from="1730045026180" duration="6953000" />
     </task>
     <servers />
   </component>
